@@ -1,8 +1,10 @@
 package com.loicteillard.easytabs.sample;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.viewpager.widget.ViewPager;
 
 public class TabLayoutTextActivity extends BaseActivity {
 
@@ -14,9 +16,9 @@ public class TabLayoutTextActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_layout_text);
-
-        tabLayout = (TabLayout) findViewById(R.id.tab_layout1);
-        viewPager = (ViewPager) findViewById(R.id.pager1);
+    
+        tabLayout = findViewById(R.id.tab_layout1);
+        viewPager = findViewById(R.id.pager1);
 
         tabLayout.addTab(tabLayout.newTab().setText("TAB 1"));
         tabLayout.addTab(tabLayout.newTab().setText("LARGE TAB 2"));

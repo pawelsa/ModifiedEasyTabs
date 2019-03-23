@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 
 import loic.teillard.easytabs.R;
 
-public class EasyTabTextView extends android.support.v7.widget.AppCompatTextView {
+public class EasyTabTextView extends androidx.appcompat.widget.AppCompatTextView implements EasyTabView {
 
     private int mSelectedColor, mUnselectedColor;
 
@@ -42,18 +42,21 @@ public class EasyTabTextView extends android.support.v7.widget.AppCompatTextView
     private void initAttributesArray(TypedArray attrsArray) {
 
         if (attrsArray == null) return;
-
-        mSelectedColor = attrsArray.getColor(R.styleable.EasyTabsAttrs_etab_selected_color, 0);
-        mUnselectedColor = attrsArray.getColor(R.styleable.EasyTabsAttrs_etab_unselected_color, 0);
+    
+        mSelectedColor = attrsArray.getColor(R.styleable.EasyTabsAttrs_selected_color, 0);
+        mUnselectedColor = attrsArray.getColor(R.styleable.EasyTabsAttrs_unselected_color, 0);
     }
 
     // ---------------------------------------------------------------------------------------------------------------------
-
-
+    
+    @Override
     public int getSelectedColor() {
         return mSelectedColor;
     }
-
+    
+    // ---------------------------------------------------------------------------------------------------------------------
+    
+    @Override
     public int getUnselectedColor() {
         return mUnselectedColor;
     }
