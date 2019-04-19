@@ -153,7 +153,7 @@ public class EasyTabs extends LinearLayout {
             }
         };
         
-        getViewPager().clearOnPageChangeListeners();
+        //getViewPager().clearOnPageChangeListeners();
         getViewPager().addOnPageChangeListener(mOnPageChangeListener);
         
         // Initial state on the default item
